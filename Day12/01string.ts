@@ -59,6 +59,7 @@ console.log("start with : ",str.startsWith("hello")) // as our sting is casesens
 
 /*
 7. replace() - it replace the string from original string it return a value
+
  */
 
 let replacedValue = str.replace("TypeScript","Welcome");
@@ -66,7 +67,71 @@ console.log("Replaced value ; ", replacedValue) //Hello, Welcome!
 
 /*
 7. split() - it will split the entari string into multiple parts based on delimerter  and store as an array
+i.e split() returns an array
  */
 let splitWords:string[] = str.split(" ");
-console.log(splitWords)
+console.log(splitWords) // output :[ 'Hello,', 'TypeScript!' ]
 
+let details = "abc@gmail.com,Welcome123";
+let loginDetails:string[] = details.split(",");
+console.log("username is : " , loginDetails[0])
+console.log("password is : " , loginDetails[1])
+/*
+    Output:
+    username is :  abc@gmail.com
+    password is :  Welcome123
+ */
+
+/*
+    9. trim(), trimStart(), trimEnd()
+
+    trim() - will remove the spaces at begining and ending of the string
+    trimStart() - it will remove the spaces at the begining of the string
+    trimEnd() - it will remove the spaces at the ending of the string
+
+ */
+
+    let mystring = "    Welcome to typescript   ";
+
+
+    console.log("Original String : " , mystring); //Output :       Welcome to typescript   
+    console.log("trimEnd() String : " , mystring.trimEnd());
+    console.log("trimStart() String : " , mystring.trimStart());
+    console.log(" trim() string : ", mystring.trim())
+
+    /*
+    10. concat()- i will join two strings
+ */
+    let stri1 = "Hello";
+    let stri2 = "Welcome";
+    let stri3 = "to Typescript";
+    
+
+    console.log("concat result : ", stri1.concat(stri2)); //output : HelloWelcome
+
+    console.log("concat result : ", stri1+stri2); //output : HelloWelcome this is alternative but not recommended
+
+    console.log("Welcome".concat("To TypeScript")); //output : WelcomeTo TypeScript here directly we are passing string values
+    // how to concat with mutliple strings
+
+    console.log((stri1.concat(stri2)).concat(stri3)) //output: HelloWelcometo Typescript
+
+    /* 
+        String immutablality: what ever the opation we do on a variable it can not impact 
+        the original value this is called immutability
+
+    */
+
+    let num = 10;
+    let rest = num + 5;
+    console.log(rest) // output is 15 but the original value of num is 10 this is called immutabulity
+
+    let firstname :string = "Rajasekhar";
+    let lastname :string = "Maddigalla";
+
+    let strres: string = firstname.concat(lastname);
+    console.log(strres); //output : RajasekharMaddigalla but it wont impact on varialbes
+    
+    // Multiline string - with the help of back tick (` `) we can define multi line string 
+    let multiline : string = `Welcome to 
+                                    TypeScript`;
